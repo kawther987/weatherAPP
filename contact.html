@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="shortcut icon" href="./img/rainy-day.png" type="image/x-icon" />
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="./css/bootstrap-icons.css" />
+    <!-- fontawesome icons -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img src="./img/rainy-day.png" alt="logo" />
+          <h1>Weather</h1></a
+        >
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link py-1 px-4 me-2"
+                href="index.html"
+                aria-current="page"
+                >Home <span class="visually-hidden">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-1 px-4 active" href="contact.html"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <i class="mode bi bi-moon-stars-fill"></i>
+      </div>
+    </nav>
+
+    <section class="my-5 text-center overflow-auto">
+      <div class="contact shadow-lg w-50 m-auto py-4 my-5 rounded-3">
+        <h2 class="mb-3 fw-bold">Contact us</h2>
+        <form>
+          <div class="d-flex gap-2 justify-content-center">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                name="formId1"
+                id="name"
+              />
+              <label for="name">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control"
+                name="formId1"
+                id="email"
+              />
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="d-flex gap-2 justify-content-center">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                name="formId1"
+                id="name"
+              />
+              <label for="name">Company Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                type="url"
+                class="form-control"
+                name="formId1"
+                id="email"
+              />
+              <label for="email">Website</label>
+            </div>
+          </div>
+          <div class="form-floating mb-3 mx-5">
+            <textarea class="form-control" name="msg" id="msg"></textarea>
+            <label for="msg">Message</label>
+          </div>
+          <button class="btn" type="button">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="py-4">
+      <div class="d-flex">
+        <div class="m-auto">
+          <p>
+            Made with <i class="fa-solid fa-heart fa-beat mx-2"></i> by Kawther
+            Mohamed
+          </p>
+          <ul class="m-0 d-flex list-unstyled gap-4 justify-content-center">
+            <li>
+              <i class="fa-brands fa-facebook-f"></i>
+            </li>
+            <li>
+              <i class="fa-brands fa-twitter"></i>
+            </li>
+            <li>
+              <i class="fa-brands fa-linkedin-in"></i>
+            </li>
+            <li>
+              <i class="fa-brands fa-whatsapp"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- bootstarap js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- main js -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

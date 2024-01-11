@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link rel="shortcut icon" href="./img/rainy-day.png" type="image/x-icon" />
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="./css/bootstrap-icons.css" />
+    <!-- fontawesome icons -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img src="./img/rainy-day.png" alt="logo" />
+          <h1>Weather</h1></a
+        >
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link py-1 px-4 active me-2"
+                href="index.html"
+                aria-current="page"
+                >Home <span class="visually-hidden">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link py-1 px-4" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <i class="mode bi bi-moon-stars-fill"></i>
+      </div>
+    </nav>
+    <section class="py-5">
+      <div class="container py-5">
+        <div class="search pt-5">
+          <form>
+            <div class="d-flex w-50 m-auto">
+              <label for="searchInput" class="p-2">
+                <i class="search-icon bi bi-search-heart"></i>
+              </label>
+              <input type="search" class="form-control" id="searchInput" />
+            </div>
+          </form>
+        </div>
+
+        <div class="row">
+          <div class="today-weather col-md-4 my-5 py-4 shadow-lg px-3">
+            <!-- <div class="d-flex justify-content-between">
+              <p class="day">Tuesday</p>
+              <p class="date">9January</p>
+            </div>
+            <div>
+              <p class="city">cairo</p>
+              <p class="deg">15<sup>o</sup>C</p>
+              <img
+                src="./img/clear.png"
+                alt="weather icon"
+                class="weatherIcon"
+              />
+              <p class="clear">clear</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <div>
+                <i class="bi bi-umbrella fa-rotate-90"></i>
+
+                <span>20%</span>
+              </div>
+              <div>
+                <i class="bi bi-wind"></i>
+                <span>18 km/h</span>
+              </div>
+              <div>
+                <i class="bi bi-compass"> </i>
+                <span>East</span>
+              </div>
+            </div> -->
+          </div>
+          <!-- <div
+            class="tomorrow text-center col-md-4 my-5 py-4 shadow-lg px-3"
+          ></div> -->
+        </div>
+      </div>
+    </section>
+    <p id="location-info">Waiting for location data...</p>
+
+    <footer class="py-4">
+      <div class="d-flex">
+        <div class="m-auto">
+          <p>
+            Made with <i class="fa-solid fa-heart fa-beat mx-2"></i> by Kawther
+            Mohamed
+          </p>
+          <ul class="m-0 d-flex list-unstyled gap-4 justify-content-center">
+            <li>
+              <i class="fa-brands fa-facebook-f"></i>
+            </li>
+            <li>
+              <i class="fa-brands fa-twitter"></i>
+            </li>
+            <li>
+              <i class="fa-brands fa-linkedin-in"></i>
+            </li>
+            <li>
+              <i class="fa-brands fa-whatsapp"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- bootstarap js -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- main js -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
