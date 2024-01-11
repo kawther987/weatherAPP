@@ -35,7 +35,7 @@ const allMonths = [
 /***************************************************/
 //Functions
 
-//change background color
+//change background image
 function changeBg() {
   const img = [
     'url("./img/bg.jpg")',
@@ -43,6 +43,7 @@ function changeBg() {
     'url("./img/bg3.jpg")',
     'url("./img/bg4.jpg")',
     'url("./img/bg5.jpg")',
+    'url("./img/bg6.jpg")',
   ];
 
   const body = document.body;
@@ -90,8 +91,8 @@ function displayToday() {
               <div class="d-flex justify-content-between align-items-center">
                 <p class="deg">${finalResponse.current.temp_c}<sup>o</sup>C</p>
                 <img src="${
-                finalResponse.current.condition.icon
-              }" alt="weather icon" class="w-25">
+                  finalResponse.current.condition.icon
+                }" alt="weather icon" class="w-25">
               </div>
               <p class="clear">${finalResponse.current.condition.text}</p>
         </div>
@@ -137,8 +138,8 @@ function nextWeather() {
 }
 /***************************************************/
 //calling
-setInterval(changeBg, 5000);
 changeBg();
+setInterval(changeBg, 5000);
 getWeather();
 
 /****************************************************/
