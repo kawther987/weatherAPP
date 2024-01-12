@@ -130,7 +130,12 @@ footer i.fa-heart {
 /**********/
 .contact {
   backdrop-filter: blur(8px);
+  background-color: var(--sec-color);
   margin-block: 100px;
+}
+.contact .textArea{
+  width: 88%;
+  margin: auto;
 }
 .contact textarea {
   height: 150px !important;

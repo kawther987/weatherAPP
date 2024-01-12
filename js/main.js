@@ -1,6 +1,6 @@
 "use strict";
 //variable
-const weather = document.querySelector(".row");
+const weather = document.querySelector(".row.weather");
 const mode = document.querySelector(".mode");
 const searchInput = document.getElementById("searchInput");
 let finalResponse = "";
@@ -64,13 +64,12 @@ function changeMode() {
 }
 
 //Get Api link
-async function getWeather(city = "cairo") {
+async function getWeather(city = "alex") {
   let response = await fetch(
     `https://api.weatherapi.com/v1/forecast.json?key=2d0cd7d4f1d9434a9b6183313240601&q=${city}&days=3`
   );
   if (response.ok == true) {
     finalResponse = await response.json();
-    console.log(finalResponse);
     displayToday();
     nextWeather();
   }
@@ -120,11 +119,12 @@ function displayToday() {
 function nextWeather() {
   let cartona = "";
   let tomorrow = finalResponse.forecast.forecastday;
-  console.log(tomorrow);
   for (let i = 0; i < 2; i++) {
+    const nextDate = new Date(tomorrow[i + 1].date);
+
     cartona = `
             <div class="tomorrow text-center col-md-4 my-5 py-4 shadow-lg px-3">
-              <p>${weekDays[today.getDay() + i + 1]}</p>
+              <p>${nextDate.toLocaleDateString("en-US", { weekday: "long" })}</p>
               <img src="${
                 tomorrow[i + 1].day.condition.icon
               }" class="w-25 mb-2" alt="weather">
@@ -150,29 +150,39 @@ searchInput.addEventListener("input", () => {
   getWeather(searchInput.value);
 });
 
-/*** */
 
-// if ("geolocation" in navigator) {
-//   // Get the user's current position
-//   navigator.geolocation.getCurrentPosition(
-//     function (position) {
-//       // Success callback
-//       let latitude = position.coords.latitude;
-//       let longitude = position.coords.longitude;
+/****************************************************/
+//Api geolocation
+function getUserLocation() {
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(displayWeather);
+  } else {
+    document.getElementById("location-info").innerHTML =
+      "Geolocation is not supported by your browser.";
+  }
+}
+// Get the user's current position
+function displayWeather(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
 
-//       // Display the location information
-//       document.getElementById("location-info").innerHTML =
-//         "Latitude: " + latitude + "<br>Longitude: " + longitude;
-//     },
-//     function (error) {
-//       // Error callback
-//       console.error("Error getting location:", error.message);
-//       document.getElementById("location-info").innerHTML =
-//         "Error getting location: " + error.message;
-//     }
-//   );
-// } else {
-//   // Geolocation is not supported
-//   document.getElementById("location-info").innerHTML =
-//     "Geolocation is not supported by your browser.";
-// }
+  showCity(latitude, longitude);
+}
+
+async function showCity(latitude, longitude) {
+  const ApiKey = "bdc_33f6e94e0f034e10b7ca1208469d99cd";
+
+  let response = await fetch(
+    `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&key=${ApiKey}`
+  );
+  if (response.ok == true) {
+    let data = await response.json();
+    console.log(data.city);
+    const city = data.city || "City not found";
+
+    getWeather(city);
+  }
+
+}
+
+window.onload = getUserLocation;
