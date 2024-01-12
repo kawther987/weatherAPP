@@ -33,6 +33,12 @@ const allMonths = [
 ];
 
 /***************************************************/
+//calling
+changeBg();
+setInterval(changeBg, 5000);
+getWeather();
+window.onload = getUserLocation;
+/***************************************************/
 //Functions
 
 //change background image
@@ -136,11 +142,7 @@ function nextWeather() {
     weather.innerHTML += cartona;
   }
 }
-/***************************************************/
-//calling
-changeBg();
-setInterval(changeBg, 5000);
-getWeather();
+
 
 /****************************************************/
 //Events
@@ -149,7 +151,6 @@ mode.addEventListener("click", changeMode);
 searchInput.addEventListener("input", () => {
   getWeather(searchInput.value);
 });
-
 
 /****************************************************/
 //Api geolocation
@@ -161,6 +162,7 @@ function getUserLocation() {
       "Geolocation is not supported by your browser.";
   }
 }
+
 // Get the user's current position
 function displayWeather(position) {
   let latitude = position.coords.latitude;
@@ -182,7 +184,5 @@ async function showCity(latitude, longitude) {
 
     getWeather(city);
   }
-
 }
 
-window.onload = getUserLocation;
